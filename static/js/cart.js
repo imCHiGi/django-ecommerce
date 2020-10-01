@@ -4,9 +4,9 @@ for(var i = 0; i < updateBtns.length; i++){
     updateBtns[i].addEventListener('click', function(){
         var productId = this.dataset.product
         var action = this.dataset.action
-        console.log('Product Id: ', productId, "Action: ", action)
+        //console.log('Product Id: ', productId, "Action: ", action)
 
-        console.log('User: ', user)
+        //console.log('User: ', user)
         if (user == 'AnonymousUser'){
             addCookieItem(productId, action)
         } else{
@@ -16,7 +16,7 @@ for(var i = 0; i < updateBtns.length; i++){
 }
 
 function addCookieItem(productId, action){
-    console.log('User is not authenticated')
+    //console.log('User is not authenticated')
     
     if (action == 'add'){
 		if (cart[productId] == undefined){
@@ -36,7 +36,7 @@ function addCookieItem(productId, action){
 		}
     }
     
-    console.log('CART:', cart)
+    //console.log('CART:', cart)
     document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
     
     location.reload()
@@ -44,7 +44,7 @@ function addCookieItem(productId, action){
 
 
 function updateUserOrder(productId, action){
-    console.log('User is authenticated, sending data...')
+    //console.log('User is authenticated, sending data...')
 
     var url = '/update_item/'
 
